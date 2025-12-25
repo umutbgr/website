@@ -1,5 +1,6 @@
 # website
-# Proje Girişi
-Aşağıdaki butona basarak uygulamayı tarayıcıda görüntüleyebilirsiniz:
+# 🚀 Zafiyet Takip Sistemi Projesi
 
-[![Uygulamayı Aç](https://img.shields.io/badge/PROJEYİ-AÇ-brightgreen?style=for-the-badge&logo=github)](https://umutbgr.github.io/index.html/)
+Projeyi indirmeden doğrudan tarayıcıda incelemek için aşağıdaki butona tıklayın:
+
+[![Uygulamayı Aç](https://img.shields.io/badge/PROJEYİ--AÇ-brightgreen?style=for-the-badge&logo=github)](https://umutbgr.github.io/website/)
