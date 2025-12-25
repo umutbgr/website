@@ -1,0 +1,82 @@
+/* Sayfa Genel Ayarları */
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #000;
+  overflow: hidden; /* Kaydırma çubuklarını gizler */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Arka plandaki Kalp Animasyonu (Canvas) */
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* En arkada durması için */
+}
+
+/* Kalbin Ortasındaki İçerik Katmanı */
+.heart-content {
+    position: absolute;
+    top: 48%; /* Kalbin merkezine göre dikey hizalama */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10; /* Çiçeklerin ve kalplerin önünde durması için */
+    pointer-events: none; /* Tıklamaların arkadaki canvas'a (kalp fışkırtma efektine) geçmesi için */
+    user-select: none;
+}
+
+/* Fotoğraf Çerçevesi */
+.photo-frame {
+    width: 140px; /* Fotoğraf boyutu */
+    height: 140px;
+    border-radius: 50%; /* Yuvarlak çerçeve */
+    border: 3px solid #ea80b0; /* Kalp renginde kenarlık */
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(234, 128, 176, 0.6); /* Hafif parlama efekti */
+    margin: 0 auto 15px;
+    background: #000; /* Fotoğraf yüklenene kadar siyah durur */
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fotoğrafın bozulmadan kutuyu doldurması için */
+}
+
+/* Mesaj Alanı */
+.heart-message {
+    color: #ea80b0; /* Kalp pembe tonu */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 5px rgba(234, 128, 176, 0.5);
+}
+
+.heart-message h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.heart-message p {
+    margin: 8px 0 0;
+    font-size: 15px;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* Küçük ekranlar (Mobil) için uyum */
+@media (max-width: 600px) {
+    .photo-frame {
+        width: 110px;
+        height: 110px;
+    }
+    .heart-message h3 {
+        font-size: 18px;
+    }
+}
