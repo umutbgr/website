@@ -234,7 +234,7 @@ let ParticlePool = (function () {
   }, 10);
 })(document.getElementById("pinkboard"));
 
-const klasorYolu = "https://github.com/umutbgr/website/tree/08d22a7e97544413871a1d93e35860e0f6238810/foto%C4%9Fraflar";
+const klasorYolu = "fotoğraflar";
 /* --- FOTOĞRAF DEĞİŞTİRME SİSTEMİ --- */
 // Buradaki isimleri klasöründeki gerçek dosya isimleriyle değiştir
 const photos = [
@@ -277,4 +277,5 @@ if (photoContainer) {
         }, 300);
     });
 }
+
 
