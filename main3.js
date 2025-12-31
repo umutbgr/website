@@ -234,25 +234,25 @@ let ParticlePool = (function () {
   }, 10);
 })(document.getElementById("pinkboard"));
 
-const klasorYolu = "fotoğraflar";
+const klasorYolu = "fotograflar/";
 /* --- FOTOĞRAF DEĞİŞTİRME SİSTEMİ --- */
 // Buradaki isimleri klasöründeki gerçek dosya isimleriyle değiştir
 const photos = [
     "2.jpg", 
     "3.jpg",
-    "4.jpeg",
-    "5.jpeg",
-    "6.jpeg",
-    "7.jpeg",
-    "8.jpeg",
-    "9.jpeg",
-    "10.jpeg",
-    "11.jpeg",
-    "12.jpeg",
-    "13.jpeg",
-    "14.jpeg",
-    "15.jpeg",
-    "16.jpeg"
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg",
+    "14.jpg",
+    "15.jpg",
+    "16.jpg"
 ];
 
 let currentPhotoIndex = 0;
@@ -277,5 +277,6 @@ if (photoContainer) {
         }, 300);
     });
 }
+
 
 
