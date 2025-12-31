@@ -234,7 +234,7 @@ let ParticlePool = (function () {
   }, 10);
 })(document.getElementById("pinkboard"));
 
-const klasorYolu = "fotograflar/";
+const klasorYolu = "./fotograflar/";
 /* --- FOTOĞRAF DEĞİŞTİRME SİSTEMİ --- */
 // Buradaki isimleri klasöründeki gerçek dosya isimleriyle değiştir
 const photos = [
@@ -277,6 +277,7 @@ if (photoContainer) {
         }, 300);
     });
 }
+
 
 
 
