@@ -235,6 +235,7 @@ let ParticlePool = (function () {
 })(document.getElementById("pinkboard"));
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("JS çalışıyor ✔");
 
   const klasorYolu = "./fotograflar/";
   const photos = [
@@ -248,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const photoContainer = document.getElementById("photo-container");
 
   if (!photoElement || !photoContainer) {
-    console.error("Fotoğraf elemanları bulunamadı");
+    console.error("Fotoğraf elemanları bulunamadı ❌");
     return;
   }
 
@@ -265,8 +266,8 @@ document.addEventListener("DOMContentLoaded", () => {
       photoElement.style.opacity = 1;
     }, 300);
   });
-
 });
+
 
 
 
