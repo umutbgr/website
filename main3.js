@@ -269,14 +269,20 @@ if (photoContainer) {
         }
 
         // Geçiş efekti için hafif karartma
-        photoElement.style.opacity = 0;
-        
-        setTimeout(() => {
-            photoElement.src = klasorYolu + photos[currentPhotoIndex];
-            photoElement.style.opacity = 1;
-        }, 300);
-    });
+photoElement.style.opacity = 0;
+
+setTimeout(() => {
+    // Fotoğrafı TAM fade-out sırasında değiştir
+    photoElement.src = klasorYolu + photos[currentPhotoIndex];
+}, 150);
+
+setTimeout(() => {
+    // Sonra fade-in
+    photoElement.style.opacity = 1;
+}, 300);
+
 }
+
 
 
 
