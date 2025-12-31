@@ -104,3 +104,14 @@ canvas {
     font-size: 18px;
   }
 }
+/* 🔥 CLICK FIX — SADECE FOTO */
+.heart-content {
+  pointer-events: none;
+}
+
+.heart-content .photo-frame {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+
