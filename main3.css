@@ -101,6 +101,17 @@ canvas {
     pointer-events: auto;
     cursor: pointer;
 }
+/* FOTOĞRAF TIKLANABİLSİN */
+.photo-frame {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Ama yazılar yine tıklanmasın */
+.heart-message {
+    pointer-events: none;
+}
+
 
 
 
