@@ -80,3 +80,6 @@ canvas {
         font-size: 18px;
     }
 }
+#main-photo {
+    transition: opacity 0.3s ease-in-out;
+}
