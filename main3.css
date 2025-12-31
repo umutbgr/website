@@ -22,14 +22,15 @@ canvas {
 /* Kalbin Ortasındaki İçerik Katmanı */
 .heart-content {
     position: absolute;
-    top: 48%; /* Kalbin merkezine göre dikey hizalama */
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 10; /* Çiçeklerin ve kalplerin önünde durması için */
-    pointer-events: none; /* Tıklamaların arkadaki canvas'a (kalp fışkırtma efektine) geçmesi için */
+    z-index: 10;
+    pointer-events: auto;   /* 🔥 ÖNEMLİ */
     user-select: none;
 }
+
 
 /* Fotoğraf Çerçevesi */
 .photo-frame {
@@ -83,3 +84,4 @@ canvas {
 #main-photo {
     transition: opacity 0.3s ease-in-out;
 }
+
