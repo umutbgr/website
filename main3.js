@@ -234,55 +234,39 @@ let ParticlePool = (function () {
   }, 10);
 })(document.getElementById("pinkboard"));
 
-const klasorYolu = "./fotograflar/";
-/* --- FOTOĞRAF DEĞİŞTİRME SİSTEMİ --- */
-// Buradaki isimleri klasöründeki gerçek dosya isimleriyle değiştir
-const photos = [
-    "2.jpg", 
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "14.jpg",
-    "15.jpg",
-    "16.jpg"
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-let currentPhotoIndex = 0;
-const photoElement = document.getElementById("main-photo");
-const photoContainer = document.getElementById("photo-container");
+  const klasorYolu = "./fotograflar/";
+  const photos = [
+    "2.jpg","3.jpg","4.jpg","5.jpg","6.jpg",
+    "7.jpg","8.jpg","9.jpg","10.jpg","11.jpg",
+    "12.jpg","13.jpg","14.jpg","15.jpg","16.jpg"
+  ];
 
-if (photoContainer) {
-    photoContainer.addEventListener('click', function() {
-        currentPhotoIndex++;
-        
-        // Fotoğraflar bitince başa dön
-        if (currentPhotoIndex >= photos.length) {
-            currentPhotoIndex = 0;
-        }
+  let currentPhotoIndex = 0;
+  const photoElement = document.getElementById("main-photo");
+  const photoContainer = document.getElementById("photo-container");
 
-        // Geçiş efekti için hafif karartma
-photoElement.style.opacity = 0;
+  if (!photoElement || !photoContainer) {
+    console.error("Fotoğraf elemanları bulunamadı");
+    return;
+  }
 
-setTimeout(() => {
-    // Fotoğrafı TAM fade-out sırasında değiştir
-    photoElement.src = klasorYolu + photos[currentPhotoIndex];
-}, 150);
+  photoContainer.addEventListener("click", () => {
+    currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
 
-setTimeout(() => {
-    // Sonra fade-in
-    photoElement.style.opacity = 1;
-}, 300);
+    photoElement.style.opacity = 0;
 
-}
+    setTimeout(() => {
+      photoElement.src = klasorYolu + photos[currentPhotoIndex];
+    }, 150);
 
+    setTimeout(() => {
+      photoElement.style.opacity = 1;
+    }, 300);
+  });
+
+});
 
 
 
