@@ -233,3 +233,47 @@ let ParticlePool = (function () {
     render();
   }, 10);
 })(document.getElementById("pinkboard"));
+
+const klasorYolu = "fotoğraflar/";
+/* --- FOTOĞRAF DEĞİŞTİRME SİSTEMİ --- */
+// Buradaki isimleri klasöründeki gerçek dosya isimleriyle değiştir
+const photos = [
+    "2.jpg", 
+    "3.jpg",
+    "4.jpeg",
+    "5.jpeg",
+    "6.jpeg",
+    "7.jpeg",
+    "8.jpeg",
+    "9.jpeg",
+    "10.jpeg",
+    "11.jpeg",
+    "12.jpeg",
+    "13.jpeg",
+    "14.jpeg",
+    "15.jpeg",
+    "16.jpeg"
+];
+
+let currentPhotoIndex = 0;
+const photoElement = document.getElementById("main-photo");
+const photoContainer = document.getElementById("photo-container");
+
+if (photoContainer) {
+    photoContainer.addEventListener('click', function() {
+        currentPhotoIndex++;
+        
+        // Fotoğraflar bitince başa dön
+        if (currentPhotoIndex >= photos.length) {
+            currentPhotoIndex = 0;
+        }
+
+        // Geçiş efekti için hafif karartma
+        photoElement.style.opacity = 0;
+        
+        setTimeout(() => {
+            photoElement.src = klasorYolu + photos[currentPhotoIndex];
+            photoElement.style.opacity = 1;
+        }, 300);
+    });
+}
