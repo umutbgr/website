@@ -1,5 +1,5 @@
 # website
-# 🚀 Zafiyet Takip Sistemi Projesi
+# 🚀 Yılbaşı
 
 Projeyi indirmeden doğrudan tarayıcıda incelemek için aşağıdaki butona tıklayın:
 
