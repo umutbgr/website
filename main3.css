@@ -1,60 +1,69 @@
 /* Sayfa Genel Ayarları */
 html,
 body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  background: #000;
-  overflow: hidden; /* Kaydırma çubuklarını gizler */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #000;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Arka plandaki Kalp Animasyonu (Canvas) */
 canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* En arkada durması için */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1; 
+    pointer-events: none; /* Tıklamalar arkadaki resme geçebilsin */
 }
 
 /* Kalbin Ortasındaki İçerik Katmanı */
 .heart-content {
     position: absolute;
-    top: 48%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 10;
-    pointer-events: auto;   /* 🔥 ÖNEMLİ */
+    z-index: 10; /* Kalplerin önünde durur */
+    pointer-events: none; /* Varsayılan olarak tıklamayı alt öğelere bırakır */
     user-select: none;
+    width: 100%;
 }
-
 
 /* Fotoğraf Çerçevesi */
 .photo-frame {
-    width: 140px; /* Fotoğraf boyutu */
+    width: 140px;
     height: 140px;
-    border-radius: 50%; /* Yuvarlak çerçeve */
-    border: 3px solid #ea80b0; /* Kalp renginde kenarlık */
+    border-radius: 50%;
+    border: 3px solid #ea80b0;
     overflow: hidden;
-    box-shadow: 0 0 25px rgba(234, 128, 176, 0.6); /* Hafif parlama efekti */
+    box-shadow: 0 0 25px rgba(234, 128, 176, 0.6);
     margin: 0 auto 15px;
-    background: #000; /* Fotoğraf yüklenene kadar siyah durur */
+    background: #000;
+    cursor: pointer;
+    pointer-events: auto; /* 🔥 Tıklanabilir olmasını sağlayan kritik satır */
+    position: relative;
+    z-index: 20;
 }
 
 .photo-frame img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Fotoğrafın bozulmadan kutuyu doldurması için */
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* Mesaj Alanı */
 .heart-message {
-    color: #ea80b0; /* Kalp pembe tonu */
+    color: #ea80b0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 5px rgba(234, 128, 176, 0.5);
+    pointer-events: none; /* Yazılar tıklamaya engel olmasın */
 }
 
 .heart-message h3 {
@@ -71,7 +80,7 @@ canvas {
     font-style: italic;
 }
 
-/* Küçük ekranlar (Mobil) için uyum */
+/* Mobil Uyum */
 @media (max-width: 600px) {
     .photo-frame {
         width: 110px;
@@ -81,37 +90,3 @@ canvas {
         font-size: 18px;
     }
 }
-#main-photo {
-    transition: opacity 0.3s ease-in-out;
-}
-canvas {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.heart-content {
-    z-index: 10;
-    pointer-events: auto;
-}
-
-.photo-frame,
-.photo-frame img {
-    pointer-events: auto;
-    cursor: pointer;
-}
-/* FOTOĞRAF TIKLANABİLSİN */
-.photo-frame {
-    pointer-events: auto;
-    cursor: pointer;
-}
-
-/* Ama yazılar yine tıklanmasın */
-.heart-message {
-    pointer-events: none;
-}
-
-
-
-
