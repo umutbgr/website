@@ -232,7 +232,6 @@ let ParticlePool = (function () {
     onResize();
     render();
   }, 10);
-})(document.getElementById("pinkboard"));
 
 const klasorYolu = "fotograflar/";
 /* --- FOTOĞRAF DEĞİŞTİRME SİSTEMİ --- */
@@ -277,3 +276,59 @@ if (photoContainer) {
         }, 300);
     });
 }
+window.addEventListener("load", () => {
+  const canvas = document.getElementById("pinkboard");
+
+  if (!canvas) return;
+
+  (function (canvas) {
+    let context = canvas.getContext("2d"),
+        particles = new ParticlePool(settings.particles.length),
+        particleRate = settings.particles.length / settings.particles.duration,
+        time;
+
+    function pointOnHeart(t) {
+      return new Point(
+        300 * Math.pow(Math.sin(t), 3),
+        280 * Math.cos(t) - 60 * Math.cos(2 * t)
+        - 25 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+      );
+    }
+
+    function render() {
+      requestAnimationFrame(render);
+      let newTime = Date.now() / 1000;
+      let deltaTime = newTime - (time || newTime);
+      time = newTime;
+
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      let amount = particleRate * deltaTime;
+      for (let i = 0; i < amount; i++) {
+        let pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+        let dir = pos.clone().length(settings.particles.velocity);
+        particles.add(
+          canvas.width / 2 + pos.x,
+          canvas.height / 2 - pos.y,
+          dir.x,
+          -dir.y
+        );
+      }
+
+      particles.update(deltaTime);
+      particles.draw(context, image);
+    }
+
+    function onResize() {
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+    }
+
+    window.addEventListener("resize", onResize);
+    onResize();
+    render();
+
+  })(canvas);
+});
+
+
