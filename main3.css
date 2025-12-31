@@ -84,4 +84,23 @@ canvas {
 #main-photo {
     transition: opacity 0.3s ease-in-out;
 }
+canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.heart-content {
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.photo-frame,
+.photo-frame img {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
 
